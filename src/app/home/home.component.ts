@@ -8,7 +8,8 @@ import { UserService } from '../shared/user.service';
   styles: []
 })
 export class HomeComponent implements OnInit {
-  userDetails;
+    userDetails;
+    isAdmin;
 
   constructor(private router:Router,private service:UserService) { }
 
@@ -20,7 +21,8 @@ export class HomeComponent implements OnInit {
       err =>{
         console.log(err)
       }
-    );
+      );
+      this.isAdmin = this.service.roleMatch(['Admin'])
   }
   
   onLogout(){

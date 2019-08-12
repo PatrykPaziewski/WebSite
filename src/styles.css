@@ -26,6 +26,7 @@ div.form-group label:not(.text-danger){
   font-weight: 700;
 }
 
+
 div.form-group.required>label:first-child:after{
   content:'*';
   color: #fff;
