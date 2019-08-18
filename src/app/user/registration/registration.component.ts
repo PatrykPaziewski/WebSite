@@ -1,6 +1,7 @@
 import { UserService } from './../../shared/user.service';
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -9,7 +10,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor(public service: UserService, private toastr: ToastrService) { }
+  constructor(public service: UserService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.service.formModel.reset();
@@ -21,6 +22,13 @@ export class RegistrationComponent implements OnInit {
         if (res.succeeded) {
           this.service.formModel.reset();
           this.toastr.success('New user created!', 'Registration successful.');
+          if (localStorage.getItem("token") != null) {
+            var payLoad = JSON.parse(window.atob(localStorage.getItem('token').split('.')[1]));
+            if(payLoad.role == "Admin")
+            {
+              this.router.navigateByUrl('/admin');
+            }
+          }
         } else {
           res.errors.forEach(element => {
             switch (element.code) {

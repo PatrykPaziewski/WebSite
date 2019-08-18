@@ -13,9 +13,13 @@ import { UserService } from './shared/user.service';
 import { LoginComponent } from './user/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AuthInterceptor } from './auth/auth.interceptor';
-import { HttpModule } from '@angular/http';
 import { AdminComponent } from './admin/admin.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { ComponentsModule } from "./components/components.module";
+import { GrammarComponent } from './home/grammar/grammar.component';
+import { IndicativoPresenteComponent } from './home/grammar/indicativo-presente/indicativo-presente.component';
+import { VocabularyComponent } from './home/vocabulary/vocabulary.component';
+import { AddAWorldComponent } from './admin/add-aworld/add-aworld.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +29,17 @@ import { ForbiddenComponent } from './forbidden/forbidden.component';
     LoginComponent,
     HomeComponent,
     AdminComponent,
-    ForbiddenComponent
+    ForbiddenComponent,
+    GrammarComponent,
+    IndicativoPresenteComponent,
+    VocabularyComponent,
+    AddAWorldComponent
   ],
   imports: [
-    HttpModule,
     FormsModule,
     BrowserModule,
     HttpClientModule,
+    ComponentsModule,
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,

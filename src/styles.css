@@ -1,101 +1,152 @@
 /* You can add global styles to this file, and also import other style files */
+
 body {
-  background-image: url("/assets/img/background.jpg");
-  background-color: #cccccc;
+    background-image: url("/assets/img/background.jpg");
+    background-attachment: fixed;
+    background-size: cover;
 }
 
-input.form-control,input.form-control:focus{
-  background-color: #636b7b;
-  color: #fff;
-  border: 1px solid #636b7b;
-
+input.form-control,
+input.form-control:focus {
+    background-color: #636b7b;
+    color: #fff;
+    border: 1px solid #636b7b;
 }
 
-input.form-control:focus{
-  box-shadow: none;
+input.form-control:focus {
+    box-shadow: none;
 }
 
-button[type=submit].btn{
-  border-radius: 20px;
-  background-color: #04c582;
-  color: #fff;
+button[type=submit].btn {
+    border-radius: 20px;
+    background-color: #04c582;
+    color: #fff;
 }
 
-div.form-group label:not(.text-danger){
-  color: #545d6a;
-  font-weight: 700;
+div.form-group label:not(.text-danger) {
+    color: #545d6a;
+    font-weight: 700;
 }
 
-
-div.form-group.required>label:first-child:after{
-  content:'*';
-  color: #fff;
-  padding-left: 5px;
+div.form-group.required>label:first-child:after {
+    content: '*';
+    color: #fff;
+    padding-left: 5px;
 }
 
-#toast-container > div {
-  opacity:1;
-}
-
-.wrapper {
-  display: flex;
-  align-items: center;
-  flex-direction: column; 
-  justify-content: center;
-  width: 100%;
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%)
+.login-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
 }
 
 .wrapped-div {
-  -webkit-border-radius: 10px 10px 10px 10px;
-  border-radius: 10px 10px 10px 10px;
-  background: #2e3137;
-  padding: 30px;
-  width: 90%;
-  max-width: 450px;
-  position: relative;
-  padding: 0px;
-  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
-  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background: #2e3137;
+    padding: 30px;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    padding: 0px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
 }
 
+
 /* Tabs */
-.tab-header{
-  text-align: center;
+
+.tab-header {
+    text-align: center;
 }
 
 .tab-header h2.active {
-  color: #fff;
-  border-bottom: 4px solid #fff;
+    color: #fff;
+    border-bottom: 4px solid #fff;
 }
 
 .tab-header h2 {
-  text-align: center;
-  font-size: 18px;
-  font-weight: 600;
-  display:inline-block;
-  padding: 30px 40px 10px 40px;
-  cursor: pointer;
-  color: #545d6a;
-  border-bottom: 2px solid #545d6a;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    display: inline-block;
+    padding: 30px 40px 10px 40px;
+    cursor: pointer;
+    color: #545d6a;
+    border-bottom: 2px solid #545d6a;
 }
 
 .tab-header h2:focus {
     outline: none;
 }
 
-form{
+form {
     margin: 0px 16px;
 }
 
-div.form-group input.invalid{
-  border: 1px solid #dc3545; 
+div.form-group input.invalid {
+    border: 1px solid #dc3545;
 }
-div.form-group label:first-child{
-  text-transform: uppercase;
-  font-size: 0.9rem;
+
+div.form-group label:first-child {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.app-loading {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.app-loading .spinner {
+    height: 200px;
+    width: 200px;
+    animation: rotate 2s linear infinite;
+    transform-origin: center center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.app-loading .spinner .path {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    animation: dash 1.5s ease-in-out infinite;
+    stroke-linecap: round;
+    stroke: #ddd;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35px;
+    }
+    100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124px;
+    }
 }
