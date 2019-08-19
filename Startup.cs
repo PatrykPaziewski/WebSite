@@ -40,16 +40,12 @@ namespace WebAPI
             services.AddDbContext<AuthenticationContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
 
-            services.AddDbContext<AuthenticationContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
-
             services.AddDefaultIdentity<ApplicationUser>()
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<AuthenticationContext>();
 
-            services.AddDbContextPool<AppDbContext>(options =>
+            services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("VerbsDBConnection")));
-
 
             services.Configure<IdentityOptions>(options =>
             {
