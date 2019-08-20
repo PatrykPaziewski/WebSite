@@ -7,9 +7,12 @@ import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './auth/auth.guard';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { AdminComponent } from './admin/admin.component';
+import { GrammarComponent } from './home/grammar/grammar.component';
+import { IndicativoPresenteComponent } from './home/grammar/indicativo-presente/indicativo-presente.component';
+import { VocabularyComponent } from './home/vocabulary/vocabulary.component';
 
 const routes: Routes = [
-  {path:'',redirectTo:'/user/login',pathMatch:'full'},
+  { path: '', redirectTo: '/user/login', pathMatch: 'full' },
   {
     path: 'user', component: UserComponent,
     children: [
@@ -17,10 +20,22 @@ const routes: Routes = [
       { path: 'login', component: LoginComponent }
     ]
   },
-  { path: 'home', component:HomeComponent,canActivate:[AuthGuard], data :{permittedRoles:['Admin','User']} },
-  { path: 'forbidden', component:ForbiddenComponent},
-  { path: 'admin', component:AdminComponent,canActivate:[AuthGuard], data :{permittedRoles:['Admin']} }
-];
+  {
+    path: 'home', component: HomeComponent, canActivate: [AuthGuard], data: { permittedRoles: ['Admin', 'User'] },
+    children: [
+      {
+        path: 'grammar', component: GrammarComponent,
+        children: [
+          { path: 'IndicativoPresente', component: IndicativoPresenteComponent }
+        ]
+      },
+      {
+        path: 'vocabulary', component: VocabularyComponent}
+    ]
+  },
+  { path: 'forbidden', component: ForbiddenComponent },
+  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard], data: { permittedRoles: ['Admin'] } }
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

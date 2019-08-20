@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +7,7 @@ import { Http } from '@angular/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  constructor(private _httpService: Http) { }
+  constructor(private _httpService: HttpClient) { }
   apiValues: string[] = [];
-  ngOnInit() {
-    this._httpService.get('/api/values').subscribe(values => {
-      this.apiValues = values.json() as string[];
-    });
-  }
+  ngOnInit() {}
 }

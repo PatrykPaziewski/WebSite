@@ -1,0 +1,93 @@
+<div class="animated contener bounceInDown">
+    <div class="card col-md-10 offset-md-1">
+        <div class="card-header">
+            <h2>Indicativo presente</h2>
+        </div>
+        <div class="card-body">
+            <h5>is similar to the simple present tense in English grammar. We use this to tense to speak about actions in the present and near future. It describes routine or repeated actions as well as permanent situations.</h5>
+        </div>
+    </div>
+    <div class=" row">
+        <div class=" col-md-5 offset-md-1">
+            <div class="card">
+                <div class=" card-header">
+                    <div class=" col-md-5 text-left">
+                        <h4 class=" card-title">Usage</h4>
+                        <h6 class=" card-subtitle mb-2 text-muted">Verb forms</h6>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="text-center">#</th>
+                                <th>Sufix</th>
+                                <th *ngFor="let Verb of Verbs">{{ Verb.Verb }} </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center">Base:</td>
+                                <td>-</td>
+                                <td *ngFor="let Verb of Verbs">{{ Verb.Base }} </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">Yo</td>
+                                <td>o</td>
+                                <td *ngFor="let Verb of Verbs">
+                                    <p><span class="text-warning">{{ Verb.Base }}</span>{{ Verb.p1 }}</p>
+                            </tr>
+                            <tr>
+                                <td class="text-center">Tú</td>
+                                <td>as/es</td>
+                                <td *ngFor="let Verb of Verbs">
+                                    <p><span class="text-warning">{{ Verb.Base }}</span>{{ Verb.p2 }}</p>
+                            </tr>
+                            <tr>
+                                <td class="text-center">él, ella, usted</td>
+                                <td>a/e</td>
+                                <td *ngFor="let Verb of Verbs">
+                                    <p><span class="text-warning">{{ Verb.Base }}</span>{{ Verb.p3 }}</p>
+                            </tr>
+                            <tr>
+                                <td class="text-center">nosotros/as</td>
+                                <td>amos/emos/imos</td>
+                                <td *ngFor="let Verb of Verbs">
+                                    <p><span class="text-warning">{{ Verb.Base }}</span>{{ Verb.m1 }}</p>
+                            </tr>
+                            <tr>
+                                <td class="text-center">vosotros/as</td>
+                                <td>áis/éis/éis</td>
+                                <td *ngFor="let Verb of Verbs">
+                                    <p><span class="text-warning">{{ Verb.Base }}</span>{{ Verb.m2 }}</p>
+                            </tr>
+                            <tr>
+                                <td class="text-center">ellos,ellas, ustede</td>
+                                <td>an/em</td>
+                                <td *ngFor="let Verb of Verbs">
+                                    <p><span class="text-warning">{{ Verb.Base }}</span>{{ Verb.m3 }}</p>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="card">
+                <div class=" card-header">
+                    <div class=" col-sm-6 text-left">
+                        <h4 class=" card-title">Usage</h4>
+                        <h6 class=" card-subtitle mb-2 text-muted">Ways of use</h6>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h4>We use the Spanish simple present tense for:</h4>
+                    <h5><i class=" tim-icons icon-minimal-right"></i>facts or conditions in the present</h5>
+                    <h5><i class=" tim-icons icon-minimal-right"></i>actions in the present</h5>
+                    <h5><i class=" tim-icons icon-minimal-right"></i>to express how long something has been going on</h5>
+                    <h5><i class=" tim-icons icon-minimal-right"></i>future actions, but only with a corresponding indication of the future time</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -34,7 +34,6 @@ namespace WebAPI.Controllers
         [Route("Register")]
         public async Task<Object> PostApplicationUser(ApplicationUserModel model)
         {
-            model.Role = "User";
             var applicationUser = new ApplicationUser() {
                 UserName = model.UserName,
                 Email = model.Email,

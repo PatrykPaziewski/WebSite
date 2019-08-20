@@ -35,11 +35,20 @@ export class UserService {
   }
 
   register() {
+    if (localStorage.getItem("token") != null) {
+      var payLoad = JSON.parse(window.atob(localStorage.getItem('token').split('.')[1]));
+      if(payLoad.role == "Admin")
+      {
+        var modelRole = "Admin"
+      }
+    }
+    else var modelRole = "User";
     var body = {
       UserName: this.formModel.value.UserName,
       Email: this.formModel.value.Email,
       FullName: this.formModel.value.FullName,
-      Password: this.formModel.value.Passwords.Password
+      Password: this.formModel.value.Passwords.Password,
+      Role: modelRole
     };
     return this.http.post(this.BaseURI + '/ApplicationUser/Register', body);
   }
