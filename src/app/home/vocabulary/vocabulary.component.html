@@ -1,1 +1,27 @@
-<h1>Vocabulary component</h1>
+<div class="card col-md-10 offset-md-1">
+    <div class="card-header">
+        <h2>Verbs:</h2>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-center">Verb:</th>
+                    <th class="text-center">Translation:</th>
+                    <th class="text-center">Yo:</th>
+                    <th class="text-center">Tú:</th>
+                    <th class="text-center">él, ella, usted:</th>
+                    <th class="text-center">nosotros/as:</th>
+                    <th class="text-center">vosotros/as:</th>
+                    <th class="text-center">ellos,ellas, ustedes:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let Verb of Verbs">
+                    <td *ngFor="let Field of Verb">
+                        <p>{{ Field }}</p>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

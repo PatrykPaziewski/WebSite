@@ -4,6 +4,7 @@
     </div>
     <div class="main-panel">
         <app-navbar></app-navbar>
+        <router-outlet></router-outlet>
         <div class=" content">
             <div class=" row">
                 <div class="col-md-4 offset-md-1">
@@ -16,16 +17,16 @@
                             </div>
                         </div>
                         <div class="card-body">
-                                <div class="col-md-4 offset-md-1">
+                            <div class="col-md-4 offset-md-1">
                                 <a href="#" class="btn btn-info btn-round " routerLink="/user/registration">
                                     Create new admin  <i class="tim-icons icon-badge"></i></a>
                             </div>
                             <div class="col-md-4 offset-md-1">
-                            <a href="#" class="btn btn-info btn-round">
-                                Another button  <i class="tim-icons icon-check-2"></i></a>
+                                <a href="#" class="btn btn-info btn-round" routerLink="/home/add-verb">
+                                Add new verb  <i class="tim-icons icon-check-2"></i></a>
                             </div>
                             <div class="col-md-4 offset-md-1">
-                            <a href="#" class="btn btn-info btn-round">
+                                <a href="#" class="btn btn-info btn-round">
                                 And another one  <i class="tim-icons icon-shape-star"></i></a>
                             </div>
                         </div>
@@ -60,9 +61,7 @@
                                 </div>
                                 <div class=" col-sm-6">
                                     <div class=" btn-group btn-group-toggle float-right" data-toggle="buttons">
-                                        <label class=" btn btn-sm btn-danger btn-simple"
-                                            (click)="data=datasets[0];updateOptions();clicked=true;clicked1=false;clicked2=false"
-                                            [ngClass]="{'active':clicked===true}">
+                                        <label class=" btn btn-sm btn-danger btn-simple" (click)="data=datasets[0];updateOptions();clicked=true;clicked1=false;clicked2=false" [ngClass]="{'active':clicked===true}">
                                             <input checked="checked" name="options" type="radio" />
 
                                             <span class=" d-none d-sm-block d-md-block d-lg-block d-xl-block">
@@ -72,9 +71,7 @@
                                                 <i class=" tim-icons icon-single-02"> </i>
                                             </span>
                                         </label>
-                                        <label class=" btn btn-sm btn-danger btn-simple"
-                                            (click)="data=datasets[1];updateOptions();clicked=false;clicked1=true;clicked2=false"
-                                            [ngClass]="{'active':clicked1===true}">
+                                        <label class=" btn btn-sm btn-danger btn-simple" (click)="data=datasets[1];updateOptions();clicked=false;clicked1=true;clicked2=false" [ngClass]="{'active':clicked1===true}">
                                             <input class=" d-none d-sm-none" name="options" type="radio" />
 
                                             <span class=" d-none d-sm-block d-md-block d-lg-block d-xl-block">
@@ -84,9 +81,7 @@
                                                 <i class=" tim-icons icon-gift-2"> </i>
                                             </span>
                                         </label>
-                                        <label class=" btn btn-sm btn-danger btn-simple"
-                                            (click)="data=datasets[2];updateOptions();clicked=false;clicked1=false;clicked2=true"
-                                            [ngClass]="{'active':clicked2===true}">
+                                        <label class=" btn btn-sm btn-danger btn-simple" (click)="data=datasets[2];updateOptions();clicked=false;clicked1=false;clicked2=true" [ngClass]="{'active':clicked2===true}">
                                             <input class=" d-none" name="options" type="radio" />
 
                                             <span class=" d-none d-sm-block d-md-block d-lg-block d-xl-block">
@@ -154,8 +149,7 @@
                             <h6 class=" title d-inline">Tasks(5)</h6>
                             <p class=" card-category d-inline">today</p>
                             <div ngbDropdown>
-                                <button class=" btn btn-link btn-icon" data-toggle="dropdown" ngbDropdownToggle
-                                    type="button">
+                                <button class=" btn btn-link btn-icon" data-toggle="dropdown" ngbDropdownToggle type="button">
                                     <i class=" tim-icons icon-settings-gear-63"> </i>
                                 </button>
                                 <div aria-labelledby="dropdownMenuLink" class=" dropdown-menu-right" ngbDropdownMenu>
@@ -188,8 +182,7 @@
                                                 </p>
                                             </td>
                                             <td class=" td-actions text-right">
-                                                <button class=" btn btn-link" type="button" placement="left"
-                                                    ngbTooltip="Edit Task" container="body">
+                                                <button class=" btn btn-link" type="button" placement="left" ngbTooltip="Edit Task" container="body">
                                                     <i class=" tim-icons icon-pencil"> </i>
                                                 </button>
                                             </td>
@@ -210,14 +203,11 @@
                                             <td>
                                                 <p class=" title">GDPR Compliance</p>
                                                 <p class=" text-muted">
-                                                    The GDPR is a regulation that requires businesses to
-                                                    protect the personal data and privacy of Europe citizens
-                                                    for transactions that occur within EU member states.
+                                                    The GDPR is a regulation that requires businesses to protect the personal data and privacy of Europe citizens for transactions that occur within EU member states.
                                                 </p>
                                             </td>
                                             <td class=" td-actions text-right">
-                                                <button class=" btn btn-link" type="button" placement="left"
-                                                    ngbTooltip="Edit Task" container="body">
+                                                <button class=" btn btn-link" type="button" placement="left" ngbTooltip="Edit Task" container="body">
                                                     <i class=" tim-icons icon-pencil"> </i>
                                                 </button>
                                             </td>
@@ -237,13 +227,11 @@
                                             <td>
                                                 <p class=" title">Solve the issues</p>
                                                 <p class=" text-muted">
-                                                    Fifty percent of all respondents said they would be more
-                                                    likely to shop at a company
+                                                    Fifty percent of all respondents said they would be more likely to shop at a company
                                                 </p>
                                             </td>
                                             <td class=" td-actions text-right">
-                                                <button class=" btn btn-link" type="button" placement="left"
-                                                    ngbTooltip="Edit Task" container="body">
+                                                <button class=" btn btn-link" type="button" placement="left" ngbTooltip="Edit Task" container="body">
                                                     <i class=" tim-icons icon-pencil"> </i>
                                                 </button>
                                             </td>
@@ -267,8 +255,7 @@
                                                 </p>
                                             </td>
                                             <td class=" td-actions text-right">
-                                                <button class=" btn btn-link" type="button" placement="left"
-                                                    ngbTooltip="Edit Task" container="body">
+                                                <button class=" btn btn-link" type="button" placement="left" ngbTooltip="Edit Task" container="body">
                                                     <i class=" tim-icons icon-pencil"> </i>
                                                 </button>
                                             </td>
@@ -288,14 +275,11 @@
                                             <td>
                                                 <p class=" title">Export the processed files</p>
                                                 <p class=" text-muted">
-                                                    The report also shows that consumers will not easily
-                                                    forgive a company once a breach exposing their personal
-                                                    data occurs.
+                                                    The report also shows that consumers will not easily forgive a company once a breach exposing their personal data occurs.
                                                 </p>
                                             </td>
                                             <td class=" td-actions text-right">
-                                                <button class=" btn btn-link" type="button" placement="left"
-                                                    ngbTooltip="Edit Task" container="body">
+                                                <button class=" btn btn-link" type="button" placement="left" ngbTooltip="Edit Task" container="body">
                                                     <i class=" tim-icons icon-pencil"> </i>
                                                 </button>
                                             </td>
@@ -319,8 +303,7 @@
                                                 </p>
                                             </td>
                                             <td class=" td-actions text-right">
-                                                <button class=" btn btn-link" type="button" placement="left"
-                                                    ngbTooltip="Edit Task" container="body">
+                                                <button class=" btn btn-link" type="button" placement="left" ngbTooltip="Edit Task" container="body">
                                                     <i class=" tim-icons icon-pencil"> </i>
                                                 </button>
                                             </td>
