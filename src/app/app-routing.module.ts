@@ -38,7 +38,6 @@ const routes: Routes = [
   },
   { path: 'forbidden', component: ForbiddenComponent },
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard], data: { permittedRoles: ['Admin'] } }
-
 ]
 
 @NgModule({
