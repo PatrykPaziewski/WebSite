@@ -1,23 +1,20 @@
-<div class="card col-md-10 offset-md-1">
+<div class="animated card col-md-10 offset-md-1 bounceInDown">
     <div class="card-header">
         <h2>Verbs:</h2>
     </div>
     <div class="card-body">
-        <table class="table">
+        <table class="table table-striped table-sm" cellspacing="0" width="100%">
             <thead>
                 <tr>
-                    <th class="text-center">Verb:</th>
-                    <th class="text-center">Translation:</th>
-                    <th class="text-center">Yo:</th>
-                    <th class="text-center">Tú:</th>
-                    <th class="text-center">él, ella, usted:</th>
-                    <th class="text-center">nosotros/as:</th>
-                    <th class="text-center">vosotros/as:</th>
-                    <th class="text-center">ellos,ellas, ustedes:</th>
+                    <th *ngFor="let head of headElements" class="text-center">{{head}}:</th>
                 </tr>
             </thead>
             <tbody>
-                
+                <tr *ngFor="let Verb of Verbs">
+                    <td class="text-center" *ngFor="let Field of objectKeys(Verb)">
+                        <p class="text-inf">{{ Verb[Field] }}</p>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>

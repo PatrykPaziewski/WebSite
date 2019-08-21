@@ -54,5 +54,11 @@ namespace WebSite.Controllers
                 throw ex;
             }
         }
+        [HttpGet]
+        [Route("GetAll")]
+        public async Task<Object> GetAll()
+        {
+            return DbContext.Verbs.ToList();
+        }
     }
 }

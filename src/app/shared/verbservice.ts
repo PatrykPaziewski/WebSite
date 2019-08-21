@@ -7,7 +7,7 @@ import { environment } from "src/environments/environment";
   providedIn: 'root'
 })
 export class VerbService {
-
+  
   constructor(private fb: FormBuilder, private http: HttpClient) { }
     readonly BaseURI = environment.BaseURL
 
@@ -36,5 +36,8 @@ export class VerbService {
       return this.http.post(this.BaseURI + '/Verbs/AddVerb', body);
   }
 
+  GetAll(){
+    return this.http.get(this.BaseURI + '/Verbs/GetAll')
+  }
 
 }
