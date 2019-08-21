@@ -9,11 +9,13 @@ import { Router } from '@angular/router';
   styles: []
 })
 export class RegistrationComponent implements OnInit {
+  public isAdmin: boolean;
 
   constructor(public service: UserService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.service.formModel.reset();
+    this.isAdmin = this.service.roleMatch(['Admin']);
   }
 
   onSubmit() {
@@ -22,22 +24,19 @@ export class RegistrationComponent implements OnInit {
         if (res.succeeded) {
           this.service.formModel.reset();
           this.toastr.success('New user created!', 'Registration successful.');
-          if (localStorage.getItem("token") != null) {
-            var payLoad = JSON.parse(window.atob(localStorage.getItem('token').split('.')[1]));
-            if(payLoad.role == "Admin")
-            {
-              this.router.navigateByUrl('/admin');
-            }
+          if (this.isAdmin) {
+            this.router.navigateByUrl('/admin');
           }
-        } else {
+        }
+        else {
           res.errors.forEach(element => {
             switch (element.code) {
-              case 'DuplicateUserName':
-                this.toastr.error('Username is already taken','Registration failed.');
+              case 'DuplicatedUserName':
+                this.toastr.error('Username is already taken', 'Registration failed.');
                 break;
 
               default:
-              this.toastr.error(element.description,'Registration failed.');
+                this.toastr.error(element.description, 'Registration failed.');
                 break;
             }
           });
