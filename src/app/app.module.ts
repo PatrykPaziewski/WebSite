@@ -4,6 +4,7 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
@@ -18,7 +19,7 @@ import { ComponentsModule } from "./components/components.module";
 import { GrammarComponent } from './home/grammar/grammar.component';
 import { IndicativoPresenteComponent } from './home/grammar/indicativo-presente/indicativo-presente.component';
 import { VocabularyComponent } from './home/vocabulary/vocabulary.component';
-import { AddVerbComponent } from './home/add-verb/add-verb.component';
+import { AddAWorldComponent } from './admin/add-aworld/add-aworld.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { AddVerbComponent } from './home/add-verb/add-verb.component';
     GrammarComponent,
     IndicativoPresenteComponent,
     VocabularyComponent,
-    AddVerbComponent
+    AddAWorldComponent
   ],
   imports: [
     FormsModule,
