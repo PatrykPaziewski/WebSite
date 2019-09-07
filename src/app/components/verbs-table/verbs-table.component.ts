@@ -25,7 +25,6 @@ export class VerbsTableComponent {
   elementData: Element[];  
   tempElementData: any;
   objectKeys = Object.keys;
-  Verbs;
   data: Element[];
   isExpansionDetailRow = (i: number, row: Object) => {
     return row.hasOwnProperty('detailRow');
@@ -62,9 +61,9 @@ export class VerbsTableComponent {
         this.dataSource.paginator = this.customPaginator;
       },
       err =>{
-        console.log(err)
+        console.log(err);
       }
-      );
+    );
   }
 
   onSearchClear() {
@@ -76,13 +75,6 @@ export class VerbsTableComponent {
     this.dataSource.filter = this.searchKey.trim().toLowerCase();
   }
 
-  getRows(data : Element[]) { 
-    const rows = [];
-    data.forEach(element => rows.push(element, { detailRow: true, element }));
-    console.log(data)
-
-    return rows;
-  }
 
   toggleRow(value: Element) {
     const foundElement = this.dataSource.data.find(elem => elem.element !== undefined && elem.element.verb === value.verb)    
@@ -90,9 +82,6 @@ export class VerbsTableComponent {
     const index = this.dataSource.data.indexOf(foundElement);
     this.dataSource.data[index].element.show = !this.dataSource.data[index].element.show;
   }
-
-  toBeShown
-
 }
 
 export interface Element {

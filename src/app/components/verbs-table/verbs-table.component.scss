@@ -85,3 +85,13 @@ div.row.centered {
     text-align: center;
     margin-top: 1rem;
 }
+
+mat-footer-row mat-footer-cell {
+    justify-content: center;
+    font-style: italic;
+    color: rgba(255, 255, 255, .7);
+}
+
+.hide {
+    display: none;
+}
