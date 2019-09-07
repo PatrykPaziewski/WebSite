@@ -19,6 +19,8 @@ import { GrammarComponent } from './home/grammar/grammar.component';
 import { IndicativoPresenteComponent } from './home/grammar/indicativo-presente/indicativo-presente.component';
 import { VocabularyComponent } from './home/vocabulary/vocabulary.component';
 import { AddVerbComponent } from './home/add-verb/add-verb.component';
+import { MatDialogModule, MatDialogRef, MatIconModule, MatToolbarModule } from '@angular/material';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,9 @@ import { AddVerbComponent } from './home/add-verb/add-verb.component';
     HttpClientModule,
     ComponentsModule,
     AppRoutingModule,
+    MatDialogModule,
+    MatIconModule,
+    MatToolbarModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
@@ -50,7 +55,9 @@ import { AddVerbComponent } from './home/add-verb/add-verb.component';
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true
-  }],
-  bootstrap: [AppComponent]
+  },
+  {provide: MatDialogRef, useValue: {}}],
+  bootstrap: [AppComponent],
+  entryComponents: [RegistrationComponent]
 })
 export class AppModule { }
