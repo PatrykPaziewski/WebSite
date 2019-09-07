@@ -3,19 +3,6 @@
         <h2>Verbs:</h2>
     </div>
     <div class="card-body">
-        <table class="table table-striped table-sm" cellspacing="0" width="100%">
-            <thead>
-                <tr>
-                    <th *ngFor="let head of headElements" class="text-center">{{head}}:</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let Verb of Verbs">
-                    <td class="text-center" *ngFor="let Field of objectKeys(Verb)">
-                        <p class="text-inf">{{ Verb[Field] }}</p>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <app-verbs-table></app-verbs-table>
     </div>
 </div>
