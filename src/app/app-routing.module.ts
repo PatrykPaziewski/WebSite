@@ -10,6 +10,7 @@ import { AdminComponent } from './admin/admin.component';
 import { GrammarComponent } from './home/grammar/grammar.component';
 import { IndicativoPresenteComponent } from './home/grammar/indicativo-presente/indicativo-presente.component';
 import { VocabularyComponent } from './home/vocabulary/vocabulary.component';
+import { AddVerbComponent } from './home/add-verb/add-verb.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/user/login', pathMatch: 'full' },
@@ -30,7 +31,9 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'vocabulary', component: VocabularyComponent}
+        path: 'vocabulary', component: VocabularyComponent
+      },
+      { path: 'add-verb', component: AddVerbComponent, canActivate: [AuthGuard], data: { permittedRoles: ['Admin'] } }
     ]
   },
   { path: 'forbidden', component: ForbiddenComponent },
