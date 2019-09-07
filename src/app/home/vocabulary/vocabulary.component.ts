@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { VerbService } from 'src/app/shared/verbservice';
+
 
 @Component({
   selector: 'app-vocabulary',
@@ -7,9 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VocabularyComponent implements OnInit {
 
-  constructor() { }
-
   ngOnInit() {
+    
   }
 
 }
