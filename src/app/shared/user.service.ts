@@ -9,8 +9,7 @@ import { environment } from "src/environments/environment";
 export class UserService {
 
   constructor(private fb: FormBuilder, private http: HttpClient) { }
-    readonly BaseURI = environment.BaseURL
-
+  readonly BaseURI = environment.BaseURL;
   formModel = this.fb.group({
     UserName: ['', Validators.required],
     Email: ['', Validators.email],
@@ -19,13 +18,10 @@ export class UserService {
       Password: ['', [Validators.required, Validators.minLength(4)]],
       ConfirmPassword: ['', Validators.required]
     }, { validator: this.comparePasswords })
-
   });
 
   comparePasswords(fb: FormGroup) {
     let confirmPswrdCtrl = fb.get('ConfirmPassword');
-    //passwordMismatch
-    //confirmPswrdCtrl.errors={passwordMismatch:true}
     if (confirmPswrdCtrl.errors == null || 'passwordMismatch' in confirmPswrdCtrl.errors) {
       if (fb.get('Password').value != confirmPswrdCtrl.value)
         confirmPswrdCtrl.setErrors({ passwordMismatch: true });
@@ -35,12 +31,8 @@ export class UserService {
   }
 
   register() {
-    if (localStorage.getItem("token") != null) {
-      var payLoad = JSON.parse(window.atob(localStorage.getItem('token').split('.')[1]));
-      if(payLoad.role == "Admin")
-      {
-        var modelRole = "Admin"
-      }
+    if (this.roleMatch(['Admin'])) {
+      var modelRole = "Admin"
     }
     else var modelRole = "User";
     var body = {
@@ -53,23 +45,25 @@ export class UserService {
     return this.http.post(this.BaseURI + '/ApplicationUser/Register', body);
   }
 
-  login(formData){
+  login(formData) {
     return this.http.post(this.BaseURI + '/ApplicationUser/Login', formData);
   }
-  getUserProfile(){
-    return this.http.get(this.BaseURI+ '/UserProfile');
+  getUserProfile() {
+    return this.http.get(this.BaseURI + '/UserProfile');
   }
 
   roleMatch(allowedRoles): boolean {
     var isMatch = false;
-    var payLoad = JSON.parse(window.atob(localStorage.getItem('token').split('.')[1]));
-    var userRole = payLoad.role;
-    allowedRoles.forEach(element => {
-      if(userRole == element) {
-        isMatch = true;
-        return false;
-      }
-    });
+    if (localStorage.getItem('token') !== null) {
+      var payLoad = JSON.parse(window.atob(localStorage.getItem('token').split('.')[1]));
+      var userRole = payLoad.role;
+      allowedRoles.forEach(element => {
+        if (userRole == element) {
+          isMatch = true;
+          return false;
+        }
+      })
+    };
     return isMatch;
   }
 }
