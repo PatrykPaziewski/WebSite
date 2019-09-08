@@ -11,6 +11,7 @@ import { GrammarComponent } from './home/grammar/grammar.component';
 import { IndicativoPresenteComponent } from './home/grammar/indicativo-presente/indicativo-presente.component';
 import { VocabularyComponent } from './home/vocabulary/vocabulary.component';
 import { AddVerbComponent } from './home/add-verb/add-verb.component';
+import { WordsLearningComponent } from './components/words-learning/words-learning.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/user/login', pathMatch: 'full' },
@@ -33,7 +34,8 @@ const routes: Routes = [
       {
         path: 'vocabulary', component: VocabularyComponent
       },
-      { path: 'add-verb', component: AddVerbComponent, canActivate: [AuthGuard], data: { permittedRoles: ['Admin'] } }
+      { path: 'add-verb', component: AddVerbComponent, canActivate: [AuthGuard], data: { permittedRoles: ['Admin'] } },
+      { path: 'learning', component: WordsLearningComponent}
     ]
   },
   { path: 'forbidden', component: ForbiddenComponent },
