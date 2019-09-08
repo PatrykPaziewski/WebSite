@@ -34,7 +34,7 @@ export class AddVerbComponent implements OnInit {
 
   Verbs: any[];
   constructor(public service: VerbService, private router: Router, private toastr: ToastrService) { }
-
+  show = false;
   ngOnInit() {
     this.service.formModel.reset();
   }
@@ -54,5 +54,11 @@ export class AddVerbComponent implements OnInit {
         console.log(err);
       }
     );
+  }
+  onToggle(){
+    if (this.show === true)
+      this.show = false;
+      else
+    this.show = true;
   }
 }
