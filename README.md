@@ -9,4 +9,4 @@ To see the website go to:
 
 Created by: Paziewski Patryk
 
-ASP.NET + Angular 7
+ASP.NET + Angular 8
