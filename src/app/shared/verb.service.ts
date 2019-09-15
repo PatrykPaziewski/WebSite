@@ -40,4 +40,7 @@ export class VerbService {
     return this.http.get(this.BaseURI + '/Verbs/GetAll')
   }
 
+  GetRandom(){
+    return this.http.get(this.BaseURI + '/Verbs/GetRandom')
+  }
 }

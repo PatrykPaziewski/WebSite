@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { VerbService } from 'src/app/shared/verbservice';
+import { VerbService } from 'src/app/shared/verb.service';
 
 
 @Component({

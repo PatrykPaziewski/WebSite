@@ -36,7 +36,7 @@ export class DoubleRowPaginatorComponent extends MatPaginator implements AfterVi
 
     selectChanged(value) {
         const startIndex = this.pageIndex * this.pageSize;
-        this.pageSize = value*2;
+        this.pageSize = value;
         this.pageIndex = Math.floor(startIndex / this.pageSize);
         this.lastIndex = Math.ceil((this.length / this.pageSize));
         this.fireEvent();
@@ -51,7 +51,7 @@ export class DoubleRowPaginatorComponent extends MatPaginator implements AfterVi
             length = Math.max(length, 0);
             const startIndex = page * pageSize;
             const endIndex = startIndex < length ? Math.min(startIndex + pageSize, length) : startIndex + pageSize;
-            return `${startIndex / 2 + 1} - ${endIndex / 2} of ${length / 2}`;
+            return `${startIndex + 1} - ${endIndex} of ${length}`;
         }
     }
 
