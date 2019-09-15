@@ -4,7 +4,7 @@
             <div class="search-div">
                 <div class="mat-elevation-z10 ">
                     <mat-form-field class="search-form-field" floatLabel="never">
-                        <input matInput placeholder="Search" [(ngModel)]="searchKey" autocomplete="off" (keyup)="applyFilter()">
+                        <input matInput placeholder="Search" [(ngModel)]="searchKey" autocomplete="off" (keyup)="applyFilter()" (keydown.esc)="onKeydown($event)">
                         <button mat-button *ngIf="searchKey" matSuffix mat-icon-button aria-label="Clear" (click)="onSearchClear()">
                             <mat-icon>close</mat-icon>
                         </button>
