@@ -12,16 +12,10 @@ import { MatDialogRef } from '@angular/material';
 export class RegistrationComponent implements OnInit {
   public isAdmin: boolean;
   constructor(public service: UserService, private router: Router, private toastr: ToastrService, public dialogRef: MatDialogRef<RegistrationComponent>) { }
-
+  
   ngOnInit() {
     this.service.formModel.reset();
-    if (localStorage.getItem("token") != null) {
-      var payLoad = JSON.parse(window.atob(localStorage.getItem('token').split('.')[1]));
-      if(payLoad.role == "Admin")
-      {
-        this.isAdmin = true;
-      }
-    }
+    this.isAdmin = this.service.roleMatch(['Admin']);
   }
 
   onSubmit() {
@@ -33,15 +27,16 @@ export class RegistrationComponent implements OnInit {
           if (this.isAdmin){
             this.onClose();
           }
-        } else {
+        }
+        else {
           res.errors.forEach(element => {
             switch (element.code) {
-              case 'DuplicateUserName':
-                this.toastr.error('Username is already taken','Registration failed.');
+              case 'DuplicatedUserName':
+                this.toastr.error('Username is already taken', 'Registration failed.');
                 break;
 
               default:
-              this.toastr.error(element.description,'Registration failed.');
+                this.toastr.error(element.description, 'Registration failed.');
                 break;
             }
           });
