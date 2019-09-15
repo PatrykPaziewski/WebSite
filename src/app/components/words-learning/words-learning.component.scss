@@ -1,0 +1,60 @@
+.container {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-15%, -50%)
+}
+
+.card-flip {
+    perspective: 1000px;
+    &:hover .flip,
+    &.hover .flip {
+        transform: rotateY(180deg);
+    }
+}
+
+.card-flip,
+.front,
+.back {
+    width: 350px;
+    height: 250px;
+    line-height: 250px;
+    border-radius: 20px;
+}
+
+.flip {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.front,
+.back {
+    backface-visibility: hidden;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    left: 0;
+}
+
+.front {
+    z-index: 2;
+    transform: rotateY(0deg);
+    background-color: #adadad;
+}
+
+.back {
+    transform: rotateY(180deg);
+    background-color: green;
+}
+
+h1 {
+    display: inline-block;
+    line-height: normal;
+    vertical-align: middle;
+}
