@@ -16,11 +16,11 @@ declare interface Verbs {
 export const Verbs: Verbs[] = [];
 
 @Component({
-  selector: 'app-add-verb',
-  templateUrl: './add-verb.component.html',
+  selector: 'app-add-word',
+  templateUrl: './add-word.component.html',
   styles: []
 })
-export class AddVerbComponent implements OnInit {
+export class AddWordComponent implements OnInit {
   formModel = {
     Name : '',
     Translation: '',

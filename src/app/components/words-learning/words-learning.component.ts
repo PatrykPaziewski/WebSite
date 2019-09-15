@@ -8,7 +8,10 @@ import { VerbService } from 'src/app/shared/verb.service';
   styleUrls: ['./words-learning.component.scss']
 })
 export class WordsLearningComponent implements OnInit {
-  word;
+    word = {
+        'name': 'Loading...',
+        'translation': 'Loading...'
+    }
   constructor(public service:VerbService) { }
 
   ngOnInit() {

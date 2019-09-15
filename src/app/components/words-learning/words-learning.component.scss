@@ -45,16 +45,23 @@
 .front {
     z-index: 2;
     transform: rotateY(0deg);
-    background-color: #adadad;
+    background-image: url("/assets/img/spain.png");
+    background-size: cover;
 }
 
 .back {
     transform: rotateY(180deg);
-    background-color: green;
+    background-image: url("/assets/img/Poland.png");
+    background-size: cover;
 }
 
 h1 {
     display: inline-block;
     line-height: normal;
     vertical-align: middle;
+    margin-bottom: 10px !important;
+    background-color: rgba(255,255,255,.7);
+    padding: 10px;
+    border-radius: 20px;
+    color: black !important;
 }

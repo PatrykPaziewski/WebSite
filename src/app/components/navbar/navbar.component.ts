@@ -168,7 +168,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     if (titlee.charAt(0) === "#") {
       titlee = titlee.slice(1);
     }
-    pageName = titlee.split("/").pop().replace(/([A-Z])/g, ' $1').trim(); 
+      pageName = titlee.split("/").pop().replace(/([A-Z])/g, ' $1').replace('-', ' ').trim(); 
     return pageName.charAt(0).toUpperCase() + pageName.slice(1)
   }
 
