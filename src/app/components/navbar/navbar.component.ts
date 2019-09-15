@@ -7,8 +7,7 @@ import { UserService } from 'src/app/shared/user.service';
 
 @Component({
   selector: "app-navbar",
-  templateUrl: "./navbar.component.html",
-  styleUrls: ["./navbar.component.css"]
+  templateUrl: "./navbar.component.html"
 })
 export class NavbarComponent implements OnInit, OnDestroy {
   private listTitles: any[];
@@ -169,7 +168,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     if (titlee.charAt(0) === "#") {
       titlee = titlee.slice(1);
     }
-    pageName = titlee.split("/").pop().replace(/([A-Z])/g, ' $1').trim(); 
+      pageName = titlee.split("/").pop().replace(/([A-Z])/g, ' $1').replace('-', ' ').trim(); 
     return pageName.charAt(0).toUpperCase() + pageName.slice(1)
   }
 

@@ -9,19 +9,23 @@ export const ROUTES: RouteInfo[] = [
   {
     path: "/home/grammar",
     title: "Grammar",
-    icon: "icon-chart-pie-36"
+    icon: "icon-align-center"
   },
   {
     path: "/home/vocabulary",
     title: "Vocabulary",
-    icon: "icon-atom"
+    icon: "icon-caps-small"
+  },
+  {
+    path: "/home/learning",
+    title: "Learn words",
+    icon: "icon-map-big"
   }
 ];
 
 @Component({
   selector: "app-sidebar",
-  templateUrl: "./sidebar.component.html",
-  styleUrls: ["./sidebar.component.css"]
+  templateUrl: "./sidebar.component.html"
 })
 export class SidebarComponent implements OnInit {
   menuItems: any[];

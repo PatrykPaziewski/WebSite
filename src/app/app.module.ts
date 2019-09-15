@@ -14,11 +14,12 @@ import { HomeComponent } from './home/home.component';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { AdminComponent } from './admin/admin.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
-import { ComponentsModule } from "./components/components.module";
+import { ComponentsModule, MaterialModule } from "./components/components.module";
 import { GrammarComponent } from './home/grammar/grammar.component';
 import { IndicativoPresenteComponent } from './home/grammar/indicativo-presente/indicativo-presente.component';
 import { VocabularyComponent } from './home/vocabulary/vocabulary.component';
-import { AddVerbComponent } from './home/add-verb/add-verb.component';
+import { AddWordComponent } from './home/add-word/add-word.component';
+import { MatDialogRef } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { AddVerbComponent } from './home/add-verb/add-verb.component';
     GrammarComponent,
     IndicativoPresenteComponent,
     VocabularyComponent,
-    AddVerbComponent
+    AddWordComponent
   ],
   imports: [
     FormsModule,
@@ -40,6 +41,7 @@ import { AddVerbComponent } from './home/add-verb/add-verb.component';
     HttpClientModule,
     ComponentsModule,
     AppRoutingModule,
+    MaterialModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
@@ -50,7 +52,9 @@ import { AddVerbComponent } from './home/add-verb/add-verb.component';
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true
-  }],
-  bootstrap: [AppComponent]
+  },
+  {provide: MatDialogRef, useValue: {}}],
+  bootstrap: [AppComponent],
+  entryComponents: [RegistrationComponent]
 })
 export class AppModule { }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { VerbService } from 'src/app/shared/verbservice';
+import { VerbService } from 'src/app/shared/verb.service';
 
 declare interface Verbs {
   Name : '',
@@ -16,11 +16,11 @@ declare interface Verbs {
 export const Verbs: Verbs[] = [];
 
 @Component({
-  selector: 'app-add-verb',
-  templateUrl: './add-verb.component.html',
+  selector: 'app-add-word',
+  templateUrl: './add-word.component.html',
   styles: []
 })
-export class AddVerbComponent implements OnInit {
+export class AddWordComponent implements OnInit {
   formModel = {
     Name : '',
     Translation: '',
@@ -34,7 +34,7 @@ export class AddVerbComponent implements OnInit {
 
   Verbs: any[];
   constructor(public service: VerbService, private router: Router, private toastr: ToastrService) { }
-
+  show = false;
   ngOnInit() {
     this.service.formModel.reset();
   }
@@ -54,5 +54,11 @@ export class AddVerbComponent implements OnInit {
         console.log(err);
       }
     );
+  }
+  onToggle(){
+    if (this.show === true)
+      this.show = false;
+      else
+    this.show = true;
   }
 }

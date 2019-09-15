@@ -1,10 +1,8 @@
 import { ViewChild, Component } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { DataSource } from '@angular/cdk/collections';
-import { Observable, of} from 'rxjs';
 import { MatTableDataSource, MatSort, MatSortable  } from '@angular/material';
 import { DoubleRowPaginatorComponent } from '../double-row-paginator/double-row-paginator.component'; 
-import { VerbService } from 'src/app/shared/verbservice';
+import { VerbService } from 'src/app/shared/verb.service';
 
 @Component({
   selector: 'app-verbs-table',
@@ -42,8 +40,6 @@ export class VerbsTableComponent {
       res =>{
         var list = Object.values(res);
         let array = list.map(verb => {
-          var i = 0;
-          i += 1;
           return {
             id: list.indexOf(verb) + 1,
             verb: verb.name,

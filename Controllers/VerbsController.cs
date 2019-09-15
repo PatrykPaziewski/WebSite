@@ -60,5 +60,11 @@ namespace WebSite.Controllers
         {
             return DbContext.Verbs.ToList();
         }
+        [HttpGet]
+        [Route("GetRandom")]
+        public async Task<Object> GetRandom()
+        {
+            return DbContext.Verbs.OrderBy(t => Guid.NewGuid()).FirstOrDefault();
+        }
     }
 }

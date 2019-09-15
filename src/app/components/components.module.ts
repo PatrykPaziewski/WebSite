@@ -24,6 +24,7 @@ import { MatAutocompleteModule, MatBadgeModule, MatBottomSheetModule, MatButtonM
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CdkDetailRowDirective } from '../cdk-detail-row.directive';
+import { WordsLearningComponent } from './words-learning/words-learning.component';
 
 @NgModule({
   exports: [
@@ -75,15 +76,14 @@ import { CdkDetailRowDirective } from '../cdk-detail-row.directive';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatTreeModule,
-    
+    MatTreeModule
   ]
 })
 export class MaterialModule {}
 
 @NgModule({
   imports: [CommonModule, RouterModule, NgbModule, ReactiveFormsModule, MaterialModule, BrowserModule, FormsModule, BrowserAnimationsModule],
-  declarations: [NavbarComponent, SidebarComponent, VerbsTableComponent, DoubleRowPaginatorComponent, CdkDetailRowDirective],
-  exports: [NavbarComponent, SidebarComponent, VerbsTableComponent]
+  declarations: [NavbarComponent, SidebarComponent, VerbsTableComponent, DoubleRowPaginatorComponent, CdkDetailRowDirective, WordsLearningComponent],
+  exports: [NavbarComponent, SidebarComponent, VerbsTableComponent, WordsLearningComponent]
 })
 export class ComponentsModule {}

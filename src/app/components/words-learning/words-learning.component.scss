@@ -1,0 +1,67 @@
+.container {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-15%, -50%)
+}
+
+.card-flip {
+    perspective: 1000px;
+    &:hover .flip,
+    &.hover .flip {
+        transform: rotateY(180deg);
+    }
+}
+
+.card-flip,
+.front,
+.back {
+    width: 350px;
+    height: 250px;
+    line-height: 250px;
+    border-radius: 20px;
+}
+
+.flip {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.front,
+.back {
+    backface-visibility: hidden;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    left: 0;
+}
+
+.front {
+    z-index: 2;
+    transform: rotateY(0deg);
+    background-image: url("/assets/img/spain.png");
+    background-size: cover;
+}
+
+.back {
+    transform: rotateY(180deg);
+    background-image: url("/assets/img/Poland.png");
+    background-size: cover;
+}
+
+h1 {
+    display: inline-block;
+    line-height: normal;
+    vertical-align: middle;
+    margin-bottom: 10px !important;
+    background-color: rgba(255,255,255,.7);
+    padding: 10px;
+    border-radius: 20px;
+    color: black !important;
+}
