@@ -1,0 +1,87 @@
+.mat-elevation-z8 .full-width {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    min-width: 300px;
+}
+
+div.mat-row.detail-row {
+    align-items: center;
+}
+
+table {
+    text-align: center;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.mat-table {
+    overflow: auto;
+    background-color: transparent;
+}
+
+.mat-header-cell,
+mat-cell {
+    color: rgba(255, 255, 255, .7);
+}
+
+.element-row {
+    position: relative;
+}
+
+.element-row:not(.expanded) {
+    cursor: pointer;
+}
+
+.element-row:not(.expanded):hover {
+    background: #32344e;
+}
+
+.element-row.expanded {
+    border-bottom-color: transparent;
+}
+
+.search-div {
+    margin: 10px;
+}
+
+.mat-form-field {
+    margin-left: 1rem;
+}
+
+.search-form-field {
+    width: 90%;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.search-form-field div.mat-form-field-underline {
+    display: none;
+}
+
+.search-form-field div.mat-form-field-infix {
+    border-top: 0px;
+}
+
+.search-form-field div.mat-form-field-wrapper {
+    padding-bottom: 0px;
+}
+
+.search-form-field div.mat-input-element {
+    color: rgba(255, 255, 255, .7);
+}
+
+div.row.centered {
+    text-align: center;
+    margin-top: 1rem;
+}

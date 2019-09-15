@@ -1,7 +1,14 @@
 <div class="animated contener bounceInDown">
     <div class="card col-md-10 offset-md-1">
         <div class="card-header">
-            <h2>Add a verb to a table</h2>
+            <div class="row">
+                <h2>Add a word to a table</h2>
+                <span class="fill-remaining-space"></span>
+                <mat-slide-toggle class="example-margin" (click)="onToggle()">
+                    It is a verb!
+                </mat-slide-toggle>
+            </div>
+
         </div>
         <div class="card-body">
             <form [formGroup]="service.formModel" class="mb-4" autocomplete='off' (submit)="onSubmit()">
@@ -17,35 +24,36 @@
                         <input class="form-control" formControlName="Translation">
                     </div>
                 </div>
-                <div class="row">
-                    <h6>Indicativo Presente:</h6>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <label>Yo:</label>
-                        <input class="form-control" formControlName="IndicativoPresenteP1">
+                <div *ngIf="show">
+                    <div class="row">
+                        <h6>Indicativo Presente:</h6>
                     </div>
-                    <div class="col">
-                        <label>Tú:</label>
-                        <input class="form-control" formControlName="IndicativoPresenteP2">
+                    <div class="row">
+                        <div class="col">
+                            <label>Yo:</label>
+                            <input class="form-control" formControlName="IndicativoPresenteP1">
+                        </div>
+                        <div class="col">
+                            <label>Tú:</label>
+                            <input class="form-control" formControlName="IndicativoPresenteP2">
+                        </div>
+                        <div class="col">
+                            <label>él, ella, usted:</label>
+                            <input class="form-control" formControlName="IndicativoPresenteP3">
+                        </div>
+                        <div class="col">
+                            <label>nosotros/as:</label>
+                            <input class="form-control" formControlName="IndicativoPresenteM1">
+                        </div>
+                        <div class="col">
+                            <label>vosotros/as:</label>
+                            <input class="form-control" formControlName="IndicativoPresenteM2">
+                        </div>
+                        <div class="col">
+                            <label>ellos,ellas, ustedes:</label>
+                            <input class="form-control" formControlName="IndicativoPresenteM3">
+                        </div>
                     </div>
-                    <div class="col">
-                        <label>él, ella, usted:</label>
-                        <input class="form-control" formControlName="IndicativoPresenteP3">
-                    </div>
-                    <div class="col">
-                        <label>nosotros/as:</label>
-                        <input class="form-control" formControlName="IndicativoPresenteM1">
-                    </div>
-                    <div class="col">
-                        <label>vosotros/as:</label>
-                        <input class="form-control" formControlName="IndicativoPresenteM2">
-                    </div>
-                    <div class="col">
-                        <label>ellos,ellas, ustedes:</label>
-                        <input class="form-control" formControlName="IndicativoPresenteM3">
-                    </div>
-
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-8 offset-md-2">

@@ -14,12 +14,12 @@ export class VerbService {
   formModel = this.fb.group({
     Name: ['', Validators.required],
     Translation: ['', Validators.required],
-    IndicativoPresenteP1: ['', Validators.required],
-    IndicativoPresenteP2: ['', Validators.required],
-    IndicativoPresenteP3: ['', Validators.required],
-    IndicativoPresenteM1: ['', Validators.required],
-    IndicativoPresenteM2: ['', Validators.required],
-    IndicativoPresenteM3: ['', Validators.required]
+    IndicativoPresenteP1: [''],
+    IndicativoPresenteP2: [''],
+    IndicativoPresenteP3: [''],
+    IndicativoPresenteM1: [''],
+    IndicativoPresenteM2: [''],
+    IndicativoPresenteM3: ['']
   });
 
   addVerb(){

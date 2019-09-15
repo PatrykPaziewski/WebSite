@@ -23,22 +23,16 @@ namespace WebSite.Models
         [Required]
         public string Translation { get; set; }
 
-        [Required]
         public string IndicativoPresenteP1 { get; set; }
 
-        [Required]
         public string IndicativoPresenteP2 { get; set; }
 
-        [Required]
         public string IndicativoPresenteP3 { get; set; }
 
-        [Required]
         public string IndicativoPresenteM1 { get; set; }
 
-        [Required]
         public string IndicativoPresenteM2 { get; set; }
 
-        [Required]
         public string IndicativoPresenteM3 { get; set; }
     }
 }
