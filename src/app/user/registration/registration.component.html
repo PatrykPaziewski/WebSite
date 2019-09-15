@@ -1,3 +1,9 @@
+<mat-toolbar *ngIf="isAdmin">
+    <span>Create a new Admin</span>
+    <span class="fill-remaining-space"></span>
+    <button class="btn-dialog-close" mat-stroked-button (click)="onClose()"><mat-icon>clear</mat-icon></button>
+</mat-toolbar>
+
 <form [formGroup]="service.formModel" class="mb-4" autocomplete='off' (submit)="onSubmit()">
     <div class="form-group required">
         <label>Username</label>
