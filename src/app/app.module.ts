@@ -18,7 +18,7 @@ import { ComponentsModule, MaterialModule } from "./components/components.module
 import { GrammarComponent } from './home/grammar/grammar.component';
 import { IndicativoPresenteComponent } from './home/grammar/indicativo-presente/indicativo-presente.component';
 import { VocabularyComponent } from './home/vocabulary/vocabulary.component';
-import { AddVerbComponent } from './home/add-verb/add-verb.component';
+import { AddWordComponent } from './home/add-word/add-word.component';
 import { MatDialogRef } from '@angular/material';
 
 @NgModule({
@@ -33,7 +33,7 @@ import { MatDialogRef } from '@angular/material';
     GrammarComponent,
     IndicativoPresenteComponent,
     VocabularyComponent,
-    AddVerbComponent
+    AddWordComponent
   ],
   imports: [
     FormsModule,
